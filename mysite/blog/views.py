@@ -20,3 +20,7 @@ def post_detail(request, pk):
 
 def post_new(request):
     return render(request, 'blog/post_new.html', {})
+
+
+def post_edit(request, pk):
+    return render(request, 'blog/post_edit.html', {})
