@@ -1,6 +1,13 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-
-
+    <h1>{{ page_title|default:"New post" }} </h1>
+    <form method="POST" class="post-form">
+        {% comment %}
+            Django complains about csrf if missing. It's for yout own good though. It makes forms secure.
+        {% endcomment %}
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
 {% endblock %}
