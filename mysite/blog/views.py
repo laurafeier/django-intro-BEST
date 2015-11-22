@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+
+def greeter(request):
+    return HttpResponse("Hello light! Where's my HTML??")
